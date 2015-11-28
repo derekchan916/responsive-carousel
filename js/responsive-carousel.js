@@ -22,6 +22,8 @@ $.Carousel = function (el) {
   $(window).on("resize", function() { this.processWindowSize()}.bind(this));
 };
 
+// this
+
 $.Carousel.prototype.swipeRightNav = function (e) {
   this.slideTo(this.activeIdx + 1);
 };
