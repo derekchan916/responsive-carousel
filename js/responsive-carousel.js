@@ -111,6 +111,10 @@ $.Carousel.prototype.updateNav = function () {
            .addClass("current");
 };
 
+$.Carousel.prototype.between = function (x, min, max) {
+  return x >= min && x <= max;
+}
+
 $.fn.carousel = function () {
   return this.each(function () {
     new $.Carousel(this);
