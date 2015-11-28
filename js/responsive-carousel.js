@@ -37,6 +37,40 @@ $.Carousel.prototype.slideTo = function (newIdx) {
   this.updateNav();
 };
 
+$.Carousel.prototype.processWindowSize = function () {
+  var windowWidth = $(window).width();
+  if (this.between(windowWidth, 0, MEDMINSIZE) && this.currentWindowSize != "small") {
+    this.renderPage("small");
+  } else if (this.between(windowWidth, MEDMINSIZE, LARGEMINSIZE) && this.currentWindowSize != "medium") {
+    this.renderPage("medium");
+  } else if (windowWidth > LARGEMINSIZE && this.currentWindowSize != "large") {
+    this.renderPage("large");
+  }
+}
+
+$.Carousel.prototype.renderPage = function (size) {
+  var pageCount, logoCount;
+
+  switch (size) {
+    case ("small"):
+      this.currentWindowSize = "small";
+      logoCount = SMALLCOUNT;
+      break;
+    case ("medium"):
+      this.currentWindowSize = "medium";
+      logoCount = MEDCOUNT;
+      break;
+    case ("large"):
+      this.currentWindowSize = "large";
+      logoCount = LARGECOUNT;
+      break;
+  }
+
+  pageCount = Math.floor(this.$items.length / logoCount);
+  this.buildPages(pageCount, logoCount);
+  this.buildNav(pageCount);
+};
+
 $.fn.carousel = function () {
   return this.each(function () {
     new $.Carousel(this);
