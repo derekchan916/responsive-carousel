@@ -16,10 +16,25 @@ $.Carousel = function (el) {
 
   this.processWindowSize();
 
-  this.$el.on("swiperight", this.swipeLeftNav.bind(this));
-  this.$el.on("swipeleft", this.swipeRightNav.bind(this));
   this.$el.on("click", "span", this.clickNav.bind(this));
   $(window).on("resize", function() { this.processWindowSize()}.bind(this));
+};
+
+$.Carousel.prototype.clickNav = function (e) {
+  this.slideTo($(e.currentTarget).index());
+};
+
+$.Carousel.prototype.slideTo = function (newIdx) {
+  if (newIdx == this.activeIdx ||
+      newIdx >= this.$pages.length ||
+      newIdx < 0) {
+    return;
+  }
+
+  this.$pages.eq(this.activeIdx).removeClass("active")
+  this.$pages.eq(newIdx).addClass("active");
+  this.activeIdx = newIdx;
+  this.updateNav();
 };
 
 $.fn.carousel = function () {
