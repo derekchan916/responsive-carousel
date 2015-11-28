@@ -16,8 +16,18 @@ $.Carousel = function (el) {
 
   this.processWindowSize();
 
+  this.$el.on("swiperight", this.swipeLeftNav.bind(this));
+  this.$el.on("swipeleft", this.swipeRightNav.bind(this));
   this.$el.on("click", "span", this.clickNav.bind(this));
   $(window).on("resize", function() { this.processWindowSize()}.bind(this));
+};
+
+$.Carousel.prototype.swipeRightNav = function (e) {
+  this.slideTo(this.activeIdx + 1);
+};
+
+$.Carousel.prototype.swipeLeftNav = function (e) {
+  this.slideTo(this.activeIdx + -1);
 };
 
 $.Carousel.prototype.clickNav = function (e) {
