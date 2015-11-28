@@ -71,6 +71,46 @@ $.Carousel.prototype.renderPage = function (size) {
   this.buildNav(pageCount);
 };
 
+$.Carousel.prototype.buildPages = function (pageCount, logoCount) {
+  var $ul, i, j;
+  this.$carousel.empty();
+
+  for (i = 0; i <= pageCount; i++) {
+    $ul = $("<ul></ul>");
+
+    for (j = logoCount * i; j < logoCount * i + logoCount; j++) {
+      $ul.append(this.$items[j]);
+    }
+
+    this.$carousel.append($ul);
+  }
+
+  this.$pages = this.$el.find("ul");
+  this.$pages.first().addClass("active");
+}
+
+$.Carousel.prototype.buildNav = function (pageCount) {
+  var i;
+  this.$nav.empty();
+
+  if (pageCount > 0) {
+    for (i = 0; i < pageCount + 1; i++) {
+      this.$nav.append("<span><div></div></span>");
+    }
+  }
+
+  this.$el.append(this.$nav);
+  this.activeIdx = 0;
+  this.updateNav();
+};
+
+$.Carousel.prototype.updateNav = function () {
+  this.$nav.children()
+           .removeClass("current")
+           .eq(this.activeIdx)
+           .addClass("current");
+};
+
 $.fn.carousel = function () {
   return this.each(function () {
     new $.Carousel(this);
