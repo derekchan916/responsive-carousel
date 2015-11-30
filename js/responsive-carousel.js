@@ -8,8 +8,8 @@ $.Carousel = function (el) {
   LARGEMINSIZE = 767;
   LARGECOUNT = 35;
   MEDMINSIZE = 480;
-  MEDCOUNT = 20;
-  SMALLCOUNT = 16;
+  MEDCOUNT = 15;
+  SMALLCOUNT = 12;
 
   this.currentWindowSize = null;
   this.activeIdx = 0;
