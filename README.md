@@ -45,3 +45,11 @@ Reading the swiping effect was rather easy with jQuery giving you a reader
   this.$el.on("swiperight", this.swipeLeftNav.bind(this));
   this.$el.on("swipeleft", this.swipeRightNav.bind(this));
 ```
+
+## Page Loading Optimization
+Several tactics were used for faster loading times:
+- Compressing png files multiple times
+- Detecting when the page changes from small -> medium, medium -> large
+- Using SASS partials instead of multiple CSS files
+- Major refactoring
+- Page could be loaded quicker if I solely used DOM elements
