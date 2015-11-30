@@ -1,6 +1,7 @@
 # Responsive Carousel
 This is a application that uses jQuery, DOM listeners, SASS, jQuery Mobile
-[Live](http://derekwychan.com/responsive-carousel/html/responsive-carousel.html)
+
+[View this Live](http://derekwychan.com/responsive-carousel/html/responsive-carousel.html)
 
 ## Scalability
 
