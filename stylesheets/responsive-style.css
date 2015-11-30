@@ -39,6 +39,10 @@ img {
   position: absolute;
   left: -100%;
   width: 100%;
+  -webkit-transition: left 300ms linear;
+  -moz-transition: left 300ms linear;
+  -ms-transition: left 300ms linear;
+  -o-transition: left 300ms linear;
   transition: left 300ms linear;
   z-index: 1; }
   .carousel > ul > li {
@@ -58,6 +62,10 @@ img {
     margin: 10px 5px;
     height: 12px;
     width: 12px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
     border-radius: 50%;
     border: 1px solid #929292;
     cursor: pointer; }
@@ -65,6 +73,10 @@ img {
     margin: 4px auto;
     height: 4px;
     width: 4px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
     border-radius: 50%;
     background: #126BC5; }
 

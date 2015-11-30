@@ -2,6 +2,20 @@
 
 $nav-filler-color: #126BC5
 
+=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -ms-border-radius: $radius
+  -o-border-radius: $radius
+  border-radius: $radius
+
+=transition($args)
+  -webkit-transition: $args
+  -moz-transition: $args
+  -ms-transition: $args
+  -o-transition: $args
+  transition: $args
+
 .header
   width: 30%
   margin: 20px auto 0px
@@ -24,7 +38,7 @@ $nav-filler-color: #126BC5
     position: absolute
     left: -100%
     width: 100%
-    transition: left 300ms linear
+    +transition(left 300ms linear)
     z-index: 1
     > li
       display: inline-block
@@ -47,7 +61,7 @@ $nav-filler-color: #126BC5
       margin: 10px 5px
       height: 12px
       width: 12px
-      border-radius: 50%
+      +border-radius(50%)
       border: 1px solid #929292
       cursor: pointer
 
@@ -56,7 +70,7 @@ $nav-filler-color: #126BC5
         margin: 4px auto
         height: 4px
         width: 4px
-        border-radius: 50%
+        +border-radius(50%)
         background: $nav-filler-color
 
 
