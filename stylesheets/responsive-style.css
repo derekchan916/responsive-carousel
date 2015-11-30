@@ -32,27 +32,28 @@ img {
 
 .carousel {
   position: relative;
-  padding: 20px 0 0 15px; }
+  padding: 20px 0 0 15px;
+  overflow: hidden; }
 
-.carousel ul {
+.carousel > ul {
   position: absolute;
   left: -100%;
   width: 100%;
   transition: left 300ms linear;
   z-index: 1; }
-  .carousel ul li {
+  .carousel > ul > li {
     display: inline-block;
     vertical-align: middle;
     text-align: center; }
-.carousel ul.active {
+.carousel > ul.active {
   left: 0;
   z-index: 3; }
-.carousel ul.active ~ ul {
+.carousel > ul.active ~ ul {
   left: 100%; }
 
-.container nav {
+.container > nav {
   display: inline-block; }
-  .container nav span {
+  .container > nav > span {
     float: left;
     margin: 10px 5px;
     height: 12px;
@@ -60,11 +61,39 @@ img {
     border-radius: 50%;
     border: 1px solid #929292;
     cursor: pointer; }
-  .container nav span.current div {
+  .container > nav > span.current > div {
     margin: 4px auto;
     height: 4px;
     width: 4px;
     border-radius: 50%;
     background: #126BC5; }
+
+@media (min-width: 767px) {
+  .carousel {
+    height: 420px; }
+    .carousel > ul > li {
+      margin: 0 2.5% 20px;
+      width: 8.5%; } }
+@media (max-width: 766px) {
+  .carousel {
+    height: 320px; }
+    .carousel > ul > li {
+      margin: 0 7% 23px 0;
+      width: 12%; } }
+@media (max-width: 680px) {
+  .carousel {
+    height: 290px; } }
+@media (max-width: 580px) {
+  .carousel {
+    height: 270px; } }
+@media (max-width: 480px) {
+  .carousel {
+    height: 310px; }
+    .carousel > ul > li {
+      margin: 0 9% 23px 0;
+      width: 15%; } }
+@media (max-width: 400px) {
+  .carousel {
+    height: 280px; } }
 
 /*# sourceMappingURL=responsive-style.css.map */

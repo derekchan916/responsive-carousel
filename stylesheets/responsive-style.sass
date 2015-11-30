@@ -14,33 +14,33 @@
 .carousel
   position: relative
   padding: 20px 0 0 15px
-  // overflow: hidden
+  overflow: hidden
 
 
 .carousel
-  ul
+  > ul
     position: absolute
     left: -100%
     width: 100%
     transition: left 300ms linear
     z-index: 1
-    li
+    > li
       display: inline-block
       vertical-align: middle
       text-align: center
 
-  ul.active
+  > ul.active
     left: 0
     z-index: 3
 
-  ul.active ~ ul
+  > ul.active ~ ul
     left: 100%
 
 
 .container
-  nav
+  > nav
     display: inline-block
-    span
+    > span
       float: left
       margin: 10px 5px
       height: 12px
@@ -49,10 +49,43 @@
       border: 1px solid #929292
       cursor: pointer
 
-    span.current
-      div
+    > span.current
+      > div
         margin: 4px auto
         height: 4px
         width: 4px
         border-radius: 50%
         background: #126BC5
+
+@media (min-width: 767px)
+  .carousel
+    > ul > li
+      margin: 0 2.5% 20px
+      width: 8.5%
+    height: 420px
+
+@media (max-width: 766px)
+  .carousel
+    > ul > li
+      margin: 0 7% 23px 0
+      width: 12%
+    height: 320px
+
+@media (max-width: 680px)
+  .carousel
+    height: 290px
+
+@media (max-width: 580px)
+  .carousel
+    height: 270px
+
+@media (max-width: 480px)
+  .carousel
+    > ul > li
+      margin: 0 9% 23px 0
+      width: 15%
+    height: 310px
+
+@media (max-width: 400px)
+  .carousel
+    height: 280px
