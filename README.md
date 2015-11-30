@@ -1,4 +1,4 @@
-# Slideshow Replica
+# Responsive Carousel
 [Live](http://derekwychan.com/responsive-carousel/html/responsive-carousel.html)
 
 ## Scalability
