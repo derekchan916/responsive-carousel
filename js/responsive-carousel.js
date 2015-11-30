@@ -121,6 +121,21 @@ $.Carousel.prototype.updateNav = function () {
            .addClass("current");
 };
 
+//DOM FORMAT
+// var el = document.getElementsByTagName("span")
+// for (var i = 0; i < el.length; i++) {
+//   el[i].classList.remove("current")
+// }
+// el[this.activeIdx].classList.add("current")
+//
+// var el = document.getElementsByClassName("current")
+//
+// for (var i = 0; i < el.length; i++) {
+//   el[i].classList.remove("current")
+// }
+//
+// document.getElementsByTagName("span")[1].classList.add("current")
+
 $.Carousel.prototype.between = function (x, min, max) {
   return x >= min && x <= max;
 }

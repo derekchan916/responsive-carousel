@@ -1,4 +1,5 @@
 # Responsive Carousel
+This is a application that uses jQuery, DOM listeners, SASS, jQuery Mobile
 [Live](http://derekwychan.com/responsive-carousel/html/responsive-carousel.html)
 
 ## Scalability
@@ -13,7 +14,7 @@ See the [Javascript Page](https://github.com/derekchan916/responsive-carousel/bl
 
 The page uses a carousel by using position:absolute on the different pages, and revealing the pages with class="active". I used a lot of CSS styling tricks and finally got it to work!
 
-See the [CSS Page](https://github.com/derekchan916/responsive-carousel/blob/master/css/responsive-carousel.css) for details
+See the [SASS Page](https://github.com/derekchan916/responsive-style/blob/master/css/responsive-style.sass) for details
 
 ## Window Resizing
 
